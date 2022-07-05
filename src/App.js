@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import VideoList from './components/VideoList';
+import moment from 'moment';
 
 export default function App() {
     const [list, setList] = useState([
@@ -17,11 +18,17 @@ export default function App() {
         },
         {
             url: 'https://www.youtube.com/embed/RK1K2bCg4J8?rel=0&amp;controls=0&amp;showinfo=0',
-            date: '2022-07-05 12:10:00'
+            date: moment(new Date())
+                    .subtract(5, "hours")
+                    .format("YYYY-MM-DD HH:mm:ss")
+                    .toString(),
         },
         {
             url: 'https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0',
-            date: '2018-01-01 16:17:00'
+            date: moment(new Date())
+                    .subtract(12, "minutes")
+                    .format("YYYY-MM-DD HH:mm:ss")
+                    .toString(),
         },
         {
             url: 'https://www.youtube.com/embed/TxbE79-1OSI?rel=0&amp;controls=0&amp;showinfo=0',
